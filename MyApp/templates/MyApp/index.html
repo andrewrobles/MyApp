@@ -1,9 +1,10 @@
-{% if todo_list %}
-    <ul>
-    {% for todo in todo_list %}
-        <li>{{ todo.text }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No todos are available.</p>
-{% endif %}
+{% for todo in todo_list %}
+    {% if todo.done %}
+        <input type="checkbox" checked>
+        <label>{{todo.text}}</label>
+    {% else %}
+        <input type="checkbox">
+        <label>{{ todo.text }}</label>
+    {% endif %}
+    <br>
+{% endfor %}
