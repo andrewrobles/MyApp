@@ -1,10 +1,19 @@
 {% for todo in todo_list %}
     {% if todo.done %}
-        <input type="checkbox" checked>
-        <label>{{todo.text}}</label>
+        <input type="checkbox" checked onclick="location.href='/{{ todo.id }}/undo'">
     {% else %}
-        <input type="checkbox">
-        <label>{{ todo.text }}</label>
+        <input type="checkbox" onclick="location.href='/{{ todo.id }}/undo'">
     {% endif %}
+    <label>{{todo.text}}</label>
     <br>
 {% endfor %}
+<script>
+const markTodoAsDone = () => {
+    alert('test')
+    window.location.href = '/' + id + '/do'
+}
+
+const markTodoAsNotDone = () => {
+    window.location.href = '/' + id + '/undo'
+}
+</script>
