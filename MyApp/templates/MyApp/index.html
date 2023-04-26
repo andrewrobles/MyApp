@@ -9,12 +9,11 @@
     <br>
 {% endfor %}
 <script>
-const markTodoAsDone = () => {
-    alert('test')
-    window.location.href = '/' + id + '/do'
+const markTodoAsDone = (id) => {
+    window.location.href = `/${id}/do`
 }
 
-const markTodoAsNotDone = () => {
-    window.location.href = '/' + id + '/undo'
+const markTodoAsNotDone = (id) => {
+    window.location.href = `/${id}/undo`
 }
 </script>
