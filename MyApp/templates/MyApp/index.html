@@ -8,12 +8,3 @@
     <label>{{todo.text}}</label>
     <br>
 {% endfor %}
-<script>
-const markTodoAsDone = (id) => {
-    window.location.href = `/${id}/do`
-}
-
-const markTodoAsNotDone = (id) => {
-    window.location.href = `/${id}/undo`
-}
-</script>
