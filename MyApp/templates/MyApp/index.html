@@ -3,17 +3,19 @@
     {% for todo in todo_list %}
         {% if todo.done %}
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" checked
+                <input class="form-check-input mt-3" type="checkbox" checked
+                style="height:30px;width:30px;"
                 onclick="location.href='/{{ todo.id }}/undo'">
-                <label class="form-check-label display-4">
+                <label class="form-check-label display-4" style="margin-left: 20px;">
                 {{ todo.text}}
                 </label>
             </div>
         {% else %}
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value=""
+                <input class="form-check-input mt-3" type="checkbox"
+                style="height:30px;width:30px;"
                 onclick="location.href='/{{ todo.id }}/do'">
-                <label class="form-check-label display-4">
+                <label class="form-check-label display-4" style="margin-left: 20px;">
                 {{ todo.text }}
                 </label>
             </div>
