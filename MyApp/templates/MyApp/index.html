@@ -2,11 +2,21 @@
 <div class="m-4">
     {% for todo in todo_list %}
         {% if todo.done %}
-            <input type="checkbox" checked onclick="location.href='/{{ todo.id }}/undo'">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" checked
+                onclick="location.href='/{{ todo.id }}/undo'">
+                <label class="form-check-label display-4">
+                {{ todo.text}}
+                </label>
+            </div>
         {% else %}
-            <input type="checkbox" onclick="location.href='/{{ todo.id }}/do'">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value=""
+                onclick="location.href='/{{ todo.id }}/do'">
+                <label class="form-check-label display-4">
+                {{ todo.text }}
+                </label>
+            </div>
         {% endif %}
-        <label>{{todo.text}}</label>
-        <br>
     {% endfor %}
 </div>
