@@ -23,3 +23,14 @@ def undo(request, id):
 def create(request, text):
     ToDoItem.objects.create(text=text)
     return redirect('/')
+
+def delete(request, id):
+    todo = ToDoItem.objects.get(id=id)
+    todo.delete()
+    return redirect('/')
+
+def edit(request, id, text):
+    todo = ToDoItem.objects.get(id=id)
+    todo.text=text
+    todo.save()
+    return redirect('/')
