@@ -19,3 +19,7 @@ def undo(request, id):
     todo.done = False 
     todo.save()
     return redirect('/')
+
+def create(request, text):
+    ToDoItem.objects.create(text=text)
+    return redirect('/')
