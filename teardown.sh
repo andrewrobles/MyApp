@@ -1,0 +1,1 @@
+rm -rf venv db.sqlite3

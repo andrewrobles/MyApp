@@ -1,5 +1,6 @@
 import json
 from django.contrib.auth.models import User
+from MyApp.models import ToDoItem
 
 if User.objects.count() == 0:
     username = 'admin'
@@ -16,3 +17,7 @@ if User.objects.count() == 0:
     user.is_staff = True
 
     user.save()
+
+ToDoItem.objects.create(text="Lorem ipsum dolor sit")
+ToDoItem.objects.create(text="Curabitur non nunc et")
+ToDoItem.objects.create(text="Maecenas condimentum")
